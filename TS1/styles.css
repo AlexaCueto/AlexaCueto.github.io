@@ -273,17 +273,20 @@ button:hover {
     }
 
     .about-me {
-        padding: 20px;
+        padding: 1px;
     }
 
     .main-content {
+        padding: 20px;
         flex-direction: column;
         padding: 10px;
     }
 
     .left-section, .right-section {
-        padding: 10px;
+        padding: 2px;
         margin: 0;
+        margin-bottom: 0;
+        border-bottom: 20px;
     }
 
     .gallery-grid {
