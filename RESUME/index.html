@@ -8,15 +8,18 @@
 </head>
 <body>
     <div class="resume-container">
+        <button type="button" onclick="changeColor()">Change Color</button>
         <header class = "top-section">  <!-- this is for my profile part -->
-            <div class ="profile-photo"></div>
+            <div class ="profile-photo">
+                <img src = "/RESUME/assets/alexaProfile.jpg" alt="Alexa Cueto Profile Picture">
+            </div>
             <div class ="profile-info">
                 <h1>Alexa Joyce G. Cueto</h1>
                 <hr> <!-- horizontal rule -->
                 <p>BSIT - Web and Mobile Technology Student</p>
                 <p>4938 Enrique Street, Palanan, Makati</p>
                 <p>Email: alexacueto30@gmail.com</p>
-                <a href="https://www.linkedin.com/in/alexa-cueto-47469623b/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                <p>Mobile: 09455574721</p>
             </div>
         </header>
 
@@ -31,12 +34,13 @@
             </p>
         </section>
 
-        <hr> <!-- horizontal rule -->
 
         <!-- left section -->
          <div class="main-content">
             <section class="left-section">
                 <h2>Education</h2>
+                <p><strong>St. Joseph's Institute Inc.</strong> (2010-2017)</p>
+                <p><strong>CNHS Special Science</strong> (2017 -2021)</p>
                 <p><strong>San Beda University Manila</strong> (2021-2023)</p>
                 <p><strong>FEU Institute of Technology</strong> (2023 - Present)</p>
             </section>
@@ -50,37 +54,47 @@
                 <li>Adobe Photoshop, Adobe Illustrator</li>
                 <li>Microsoft Office</li>
                 <li>Research Writing</li>
-                <li>Communication & Teamwork</li>
-                <li>Time Management</li>
-                <li>Problem-Solving</li>
+                <li>Digital Drawing, Design</li>
             </ul>
           </section>
         </div>
-
-        <hr> <!-- horizontal rule -->
 
         <!-- gallery section -->
         <section class="photo-gallery">
             <h2>Gallery</h2>
         <div class="gallery-grid">
-            <img src="https://shorturl.at/TtgJl" alt="Photo 1">
-            <img src="https://shorturl.at/5SKVf" alt="Photo 2">
-            <img src="https://shorturl.at/wAZUE" alt="Photo 3">
-            <img src="https://shorturl.at/JW1nT" alt="Photo 4">
+            <img src="/RESUME/assets/adobeIllus.png" alt="Photo 1">
+            <img src="/RESUME/assets/code.jpg" alt="Photo 2">
+            <img src="/RESUME/assets/dressDigital.jpg" alt="Photo 3">
+            <img src="/RESUME/assets/researchWriting.jpg" alt="Photo 4">
+            <img src="/RESUME/assets/logo.jpg" alt="Photo 5">
         </div>
         </section>
-
-        <hr> <!-- horizontal rule -->
 
         <!-- attachment section -->
          <section class="attachments">
             <h2>Attachments</h2>
             <ul>
-                <li><a href="https://www.wattpad.com/user/ecyela" target="_blank">Wattpad Account</a></li>
+                <li><a href= "https://www.linkedin.com/in/alexa-cueto-47469623b/" target="_blank">LinkedIn Profile</a></li>
+                <li><a href="https://edith.feutech.edu.ph/briefcase/discover" target="_blank">Edith Briefcase</a></li>
                 <li><a href="https://www.facebook.com/alexa.cueto.12/" target="_blank">Facebook Account</a></li>
-                <li><a href="https://open.spotify.com/playlist/0KNDt7IcLMiEjIWrAWal0g?si=f073a8db719f4b43" target="_blank">Spotify Playlist</a></li>
             </ul>
          </section>
     </div>
+
+    <script>
+        function changeColor() {
+            let resumeContainer = document.querySelector('.resume-container');
+            let isColorDark = resumeContainer.classList.toggle('dark-theme');
+        
+            if (isColorDark) {
+                resumeContainer.style.backgroundColor = '#712929';
+                resumeContainer.style.color = 'white';
+            } else {
+                resumeContainer.style.backgroundColor = '#f4f4f4';
+                resumeContainer.style.color = 'black';
+            }
+        }        
+    </script>
 </body>
 </html>
