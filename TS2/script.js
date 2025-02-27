@@ -1,12 +1,4 @@
-const boxes = [
-    document.getElementById("box1"),
-    document.getElementById("box2")
-];
-
-let activeBoxIndex = 0;
-let previousButton = null;
-let lastClickTime = 0; // Track last click time
-
+// Colors for each day
 const colors = {
     "Monday": { bg: "#88c1d3", border: "#296475" },
     "Tuesday": { bg: "#e3a9af", border: "#84454b" },
@@ -17,60 +9,79 @@ const colors = {
     "Sunday": { bg: "#c7696c", border: "#6d2a2d" }
 };
 
+// Attach event listeners to buttons
+document.querySelectorAll(".Weekday").forEach(button => {
+    button.addEventListener("click", function () {
+        colorBox(button.getAttribute("data-day")); 
+    });
+});
+
 function colorBox(day) {
-    const now = performance.now();
-    let timeDiff = now - lastClickTime;
-    lastClickTime = now; // Update last click time
+    let container = document.querySelector(".calendar-container");
 
-    let animationSpeed = Math.max(300, Math.min(1000, timeDiff)); // Control speed
+    // Purpose: Remove all boxes 
+    document.querySelectorAll(".box").forEach(box => {
+        box.style.top = "-10px";
+        setTimeout(() => box.remove(), 1000);
+    });
 
-    const container = document.querySelector(".calendar-container");
-    const containerRect = container.getBoundingClientRect();
+    // Purpose: Create new element na "box", then ilalagay sa container
+    let box = document.createElement("div");
+    box.className = "box moving-box";
+    box.style.backgroundColor = "transparent";
+    box.style.border = `3px solid ${colors[day].border}`;
+    box.style.top = "-10px";
+    box.dataset.bgColor = colors[day].bg;
 
-    // Calculate stopping position (middle of container)
-    const boxFinalY = containerRect.top + (containerRect.height / 2) - 100; // Middle, slightly adjusted
-    const boxStartY = containerRect.top + 20; // Start near the top
+    // Append box
+    container.appendChild(box);
 
-    let movingUpBox = boxes[activeBoxIndex]; // Box that moves up
-    activeBoxIndex = (activeBoxIndex + 1) % 2;
-    let movingDownBox = boxes[activeBoxIndex]; // Box that moves down
+    // Animate box
+    setTimeout(() => {
+        box.style.top = "60%";
+    }, 500);
 
-    if (previousButton === null) {
-        moveBox(movingDownBox, boxStartY, boxFinalY, colors[day].bg, colors[day].border, animationSpeed);
-    } else {
-        moveBox(movingUpBox, boxFinalY, boxStartY, colors[previousButton].bg, colors[previousButton].border, animationSpeed, true);
-        moveBox(movingDownBox, boxStartY, boxFinalY, colors[day].bg, colors[day].border, animationSpeed);
-    }
-
-    previousButton = day; 
+    // Check for overlapping boxes
+    setTimeout(overlaps, 100);
 }
 
-function moveBox(box, start, end, bgColor, borderColor, speed, hideAfter = false) {
-    box.style.display = "block";
-    box.style.backgroundColor = bgColor;
-    box.style.border = `3px solid ${borderColor}`;
-    
-    // **Move box to the right corner**
-    box.style.left = "calc(100% - 450px)"; // 20px from the right (450px box width + margin)
-    box.style.transform = "translateX(0%)"; // No centering needed
-    box.style.top = `${start}px`;
+// Overlapping baxes
+function overlaps() {
+    let boxes = document.querySelectorAll(".box");
 
-    let startTime = null;
+    // Loop through each box
+    boxes.forEach(box1 => {
+        let isOverlapping = false;
 
-    function animate(timestamp) {
-        if (!startTime) startTime = timestamp;
-        let progress = (timestamp - startTime) / speed;
+        // Check if box1 is overlapping with any other box
+        boxes.forEach(box2 => {
+            if (box1 !== box2 && isOverlappingBoxes(box1, box2)) {
+                isOverlapping = true;
+            }
+        });
 
-        if (progress > 1) progress = 1;
-        let newY = start + (end - start) * progress;
-        box.style.top = `${newY}px`;
-
-        if (progress < 1) {
-            requestAnimationFrame(animate);
-        } else if (hideAfter) {
-            box.style.display = "none"; 
+        // Apply background color when overlapping
+        if (isOverlapping) {
+            box1.style.backgroundColor = box1.dataset.bgColor;
+            box1.style.opacity = "0.7";
+        } else {
+            box1.style.backgroundColor = "transparent";
+            box1.style.opacity = "1";
         }
-    }
+    });
 
-    requestAnimationFrame(animate);
+    // Request animation frame to keep checking for overlaps
+    requestAnimationFrame(overlaps);
+}
+
+// Check if two boxes are overlapping
+function isOverlappingBoxes(box1, box2) {
+    // Get the bounding rectangle of each box
+    let rect1 = box1.getBoundingClientRect();
+    let rect2 = box2.getBoundingClientRect();
+    
+    return !(rect1.right < rect2.left ||
+        rect1.left > rect2.right ||
+        rect1.bottom < rect2.top ||
+        rect1.top > rect2.bottom);
 }

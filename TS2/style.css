@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px; 
+    gap: 5px; 
 }
 
 button {
@@ -45,7 +45,7 @@ button {
 
 .Weekday {
     margin: 10px 40px 15px;
-    padding: 1px;
+    padding: 5px;
     width: 250px;
     cursor: pointer;
     border-radius: 9px;
@@ -98,8 +98,7 @@ button {
     width: 180px;
     height: 80px;
     position: absolute;
-    left: 75%;
+    left: 50%;
     transform: translateX(-50%);
-    display: none;
-    transition: background-color 0.3s ease;
+    transition: top 1s ease-in-out, background-color 0.5s ease, opacity 1s ease;
 }
