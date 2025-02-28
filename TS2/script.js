@@ -1,12 +1,12 @@
 // Colors for each day
 const colors = {
     "Monday": { bg: "#88c1d3", border: "#296475" },
-    "Tuesday": { bg: "#ba6870", border: "#84454b" },
+    "Tuesday": { bg: "#e3a9af", border: "#84454b" },
     "Wednesday": { bg: "#faeab6", border: "#ae943d" },
     "Thursday": { bg: "#abfae2", border: "#1f926f" },
     "Friday": { bg: "#a8acd8", border: "#3a3f79" },
     "Saturday": { bg: "#d7eacb", border: "#3a671f" },
-    "Sunday": { bg: "#e989b7", border: "#c84fa4" }
+    "Sunday": { bg: "#c7696c", border: "#6d2a2d" }
 };
 
 // Attach event listeners to buttons
