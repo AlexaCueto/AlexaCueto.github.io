@@ -63,7 +63,7 @@ function overlaps() {
         // Apply background color when overlapping
         if (isOverlapping) {
             box1.style.backgroundColor = box1.dataset.bgColor;
-            box1.style.opacity = "0.7";
+            box1.style.opacity = "0.9";
         } else {
             box1.style.backgroundColor = "transparent";
             box1.style.opacity = "1";
