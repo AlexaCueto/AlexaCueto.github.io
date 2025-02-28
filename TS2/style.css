@@ -2,7 +2,7 @@
     margin: 0;
     padding: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #c2c8ce;
+    background-color: #ecd6c4;
     position: relative;
 }
 
@@ -14,22 +14,22 @@
     max-width: 1000px;
     padding: 10px;
     margin: 30px auto;
-    box-shadow: 0 0px 20px rgba(70, 61, 56, 0.1);
-    background-color: #ecd6c4;
+    box-shadow: 0 0px 20px rgba(122, 107, 98, 0.1);
+    background-color: #c2c8ce;
     border-radius: 10px;
     border: 3px solid  rgb(194, 130, 113); 
 }
 
 .calendar-container h1{
-    background-color: #ecd6c4;
+    background-color: #c2c8ce;
     text-align: center;
     font-size: 36px;
-    color: #99572e;
+    color: rgb(194, 130, 113);
     border-bottom: 3px solid  rgb(194, 130, 113); 
 }
 
 .top-section{
-    background-color: #ecd6c4;
+    background-color: #c2c8ce;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +50,7 @@ button {
     cursor: pointer;
     border-radius: 9px;
     transition: transform 0.2 ease;
-    background-color: #ecd6c4;
+    background-color: #c2c8ce;
     border: 0;
 }
 
@@ -62,43 +62,105 @@ button {
     color: #296475; 
     background-color: #88c1d3; 
     border: 3px solid #296475; 
+    border-radius: 10px;
 }
 .Tuesday h2 { 
     color: #84454b; 
     background-color: #e3a9af; 
     border: 3px solid #84454b; 
+    border-radius: 10px;
 }
 .Wednesday h2 { 
     color: #ae943d; 
     background-color: #faeab6; border: 
     3px solid #ae943d; 
+    border-radius: 10px;
 }
 .Thursday h2 { 
     color: #1f926f; 
     background-color: #abfae2; 
     border: 3px solid #1f926f; 
+    border-radius: 10px;
 }
 .Friday h2 { 
     color: #3a3f79; 
     background-color: #a8acd8; 
     border: 3px solid #3a3f79; 
+    border-radius: 10px;
 }
 .Saturday h2 { 
     color: #3a671f; 
     background-color: #d7eacb; 
     border: 3px solid #3a671f; 
+    border-radius: 10px;
 }
 .Sunday h2 { 
     color: #6d2a2d; 
     background-color: #c7696c; 
     border: 3px solid #6d2a2d; 
+    border-radius: 10px;
 }
 
 .moving-box {
-    width: 180px;
-    height: 80px;
+    width: 300px;
+    height: 230px;
     position: absolute;
-    left: 50%;
+    left: 70%;
     transform: translateX(-50%);
     transition: top 1s ease-in-out, background-color 0.5s ease, opacity 1s ease;
+    border-radius: 10px;
+}
+
+/*(Max-width: 480px) */
+@media (max-width: 480px) {
+    .calendar-container {
+        right: 5%;
+        width: 60%;
+        padding: 5px;
+    }
+
+    .Weekday {
+        right: 13%;
+        margin: 10px 40px 15px;
+        padding: 5px;
+        width: 150px;
+        font-size: 10px;
+        cursor: pointer;
+        border-radius: 9px;
+        transition: transform 0.2 ease;
+        background-color: #c2c8ce;
+        border: 0;
+    }
+
+    .moving-box {
+        width: 20%;
+        height: 150px;
+        left: 70%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+    }
+}
+
+/*(Max-width: 768px) */
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .top-section {
+        padding-left: 0px;
+        padding-right: 5px;
+        flex-direction: column;
+        text-align: left;
+        justify-content: start;
+    }
+
+    .moving-box {
+        width: 35%;
+        height: 150px;
+        left: 75%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+    }
 }
