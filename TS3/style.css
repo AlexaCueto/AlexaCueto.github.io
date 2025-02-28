@@ -25,14 +25,14 @@ body {
     padding: 30px 20px 15px 20px;
     border-radius: 10px;
     box-shadow: 3px 10px 20px #593882;
-    background: #cfc7d7;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .display input {
-    background-color: #a08ba2;
+    background-color: #c5aec7;
     opacity: 0.6;
     padding: 15px;
     width: 250px;
@@ -43,7 +43,7 @@ body {
     cursor: pointer;
     text-align: left;
     font-size: 24px;
-    color: white;
+    color: rgb(39, 7, 65);
 }
 
 .buttons {
@@ -54,6 +54,7 @@ body {
 
 input[type="button"] {
     border: none;
+    color: black;
     outline: none;
     padding: 15px;
     font-size: 20px;
@@ -68,9 +69,9 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background: #887a7a93; 
+    background: #be61b393; 
     border: 2px solid rgb(225, 214, 227);
-    color: white;
+    color: rgb(189, 42, 218);
     transform: scale(0.9); /* Enlarges the button */ 
 }
 
