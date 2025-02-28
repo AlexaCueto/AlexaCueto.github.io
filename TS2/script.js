@@ -6,7 +6,7 @@ const colors = {
     "Thursday": { bg: "#abfae2", border: "#1f926f" },
     "Friday": { bg: "#a8acd8", border: "#3a3f79" },
     "Saturday": { bg: "#d7eacb", border: "#3a671f" },
-    "Sunday": { bg: "#e989b7", border: "#6d2a2d" }
+    "Sunday": { bg: "#e989b7", border: "#c84fa4" }
 };
 
 // Attach event listeners to buttons
@@ -29,7 +29,7 @@ function colorBox(day) {
     let box = document.createElement("div");
     box.className = "box moving-box";
     box.style.backgroundColor = "transparent";
-    box.style.border = `3px solid ${colors[day].border}`;
+    box.style.border = `10px solid ${colors[day].border}`;
     box.style.top = "-10px";
     box.dataset.bgColor = colors[day].bg;
 
