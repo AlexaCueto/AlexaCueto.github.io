@@ -22,6 +22,7 @@ function deleteLastNumber(button) {
 
 function clearDisplay(button) {
     display.value = "";
+    changeBackgroundGradient();
 }
 
 function changeBackgroundGradient() {
