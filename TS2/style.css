@@ -111,11 +111,11 @@ button {
     border-radius: 10px;
 }
 
-/*(Max-width: 480px) */
-@media (max-width: 480px) {
+/*(Max-width: 500px) */
+@media (max-width: 500px) {
     .calendar-container {
-        right: 5%;
-        width: 60%;
+        right: 1%;
+        width: 100%;
         padding: 5px;
     }
 
@@ -128,14 +128,14 @@ button {
         cursor: pointer;
         border-radius: 9px;
         transition: transform 0.2 ease;
-        background-color: #c2c8ce;
+        background-color: #eae7df;
         border: 0;
     }
 
     .moving-box {
-        width: 20%;
+        width: 10px;
         height: 150px;
-        left: 70%;
+        left: 40%;
         transform: translateX(-50%);
         border-radius: 10px;
     }
