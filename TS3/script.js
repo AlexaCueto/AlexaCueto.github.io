@@ -26,7 +26,7 @@ function clearDisplay(button) {
 
 function changeBackgroundGradient() {
     if (toggleGradient) {
-        body.style.background = "linear-gradient(to right,rgb(107, 169, 224),rgb(221, 207, 134))";
+        body.style.background = "linear-gradient(to right,rgb(208, 120, 191),rgb(157, 64, 211))";
     } else {
         body.style.background = "linear-gradient(to right, #a06be0, #e78bd2)";
     }
