@@ -1,0 +1,258 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body::before {
+    content: '';
+    background: url('../TS4/assets/bg1.jpg') no-repeat center center fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    opacity: 0.2; 
+    z-index: -1; /* to stay behind images */
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0e18c;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    margin-left: 50px;
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    color: #75381c;
+}
+
+.menu-header h1 {
+    margin: 0; 
+    font-size: 1.5rem;
+}
+
+.menu-header p {
+    margin: 5px 0 0 0; 
+    font-style: italic;
+}
+
+.menu-header img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 3px solid #75381c;
+    transition: 0.9s;
+}
+
+#main-menu{
+    background-color: #75381c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.9s ease-in-out;
+}
+
+#main-menu:hover{
+    background-color: #f0e18c;
+    color: #75381c;
+}
+
+.right-section {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1.text-center {
+    font-size: 2rem;
+    color: #75381c;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+/* Dessert Card Styling */
+.dessert-card {
+    border: 5px solid #f0e18c;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+    height: 300px;
+}
+
+.dessert-card:hover {
+    transform: scale(1.05);
+}
+
+.dessert-card img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.custom-bg {
+    background-color: #f0e18c;
+}
+
+.card-title{
+    color: #75381c;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+/* This is to hide the dessert details if not selected and also to make the cards disappear when selected */
+.hidden {
+    display: none;
+} 
+
+#dessertDetails {
+    position: absolute;
+    margin-top: 90px;;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 60%;
+    max-width: 800px;
+    background: #f0e18c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+#dessertDetails img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.details-content h2 {
+    color: #75381c;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.details-content p {
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+}
+
+
+
+/*  758px */
+@media (max-width: 758px) {
+    .menu-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .left-section {
+        margin-left: 0;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .menu-header img {
+        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .right-section {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .row {
+        justify-content: center;
+    }
+    .col-md-3 {
+        flex: 0 0 48%; /* Make two items per row */
+        max-width: 48%;
+        margin-bottom: 20px;
+    }
+    h1.text-center {
+        font-size: 1.75rem;
+    }
+
+    #dessertDetails {
+        height: 75%;
+        margin-top: 10px;
+    }
+}
+
+/* max-width: 500px */
+@media (max-width: 500px) {
+    .menu-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .left-section {
+        margin-left: 0;
+    }
+
+    .menu-header img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .menu-header h1 {
+        font-size: 18px;
+    }
+
+    .menu-header p {
+        font-size: 14px;
+    }
+
+    #main-menu {
+        height: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .col-md-3 {
+        flex: 0 0 100%; /* Stack items on top of each other */
+        max-width: 100%;
+    }
+    h1.text-center {
+        font-size: 1.5rem;
+    }
+
+    #dessertDetails {
+        height: 75%;
+        margin-top: 10px;
+    }
+}
